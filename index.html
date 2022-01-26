@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira de Investimentos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icone.png">
+</head>
+<body>
+    <header>
+      <img src="img/predio.png">
+      
+        CARTEIRA DE FUNDOS IMOBILIÁRIOS
+    </header>
+    <div id="container">
+    <canvas id="myCh" style="width:50%;max-width:600px"></canvas>
+    <canvas id="myChart" style="width:200%;max-width:750px"></canvas>
+    
+    </div>
+
+    <script>
+    Chart.defaults.global.elements.arc.borderWidth = 0;
+    var xValues = ["MXRF11", "HGLG11", "IRDM11", "TRXF11", "KNRI11"];
+    var yValues = [150, 125, 100, 90, 75];
+    var barColors = ["#1e7145", "#403152","#2b5797","#C37373","#A19920"];
+    
+    new Chart("myChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+          
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "QUANTIDADE DE COTAS"
+        }
+      }
+    });
+
+var xValues = ["MXRF11", "HGLG11", "IRDM11", "TRXF11", "KNRI11"];
+var yValues = [30, 25, 20, 15, 10];
+var barColors = [
+  "#1e7145",
+  "#403152",
+  "#2b5797",
+  "#C37373",
+  "#A19920"
+];
+
+new Chart("myCh", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+      
+      
+      
+      
+      
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "COMPOSIÇÃO DA CARTEIRA (%)"
+    }
+  }
+
+    
+});
+
+    </script>
+    
+
+
+
+
+</body>
+</html>
